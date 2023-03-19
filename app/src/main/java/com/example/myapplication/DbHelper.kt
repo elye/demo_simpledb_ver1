@@ -1,4 +1,4 @@
-package com.elyeproj.simpledb
+package com.example.myapplication
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -22,17 +22,17 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, DbHelper.DATABASE_N
     }
 
     companion object {
-        val KEY_ID = "_ID"
-        val KEY_NAME = "NAME"
-        val DATABASE_TABLE = "simpletable"
+        const val KEY_ID = "_ID"
+        const val KEY_NAME = "NAME"
+        const val DATABASE_TABLE = "simpletable"
         var RESULT_COLUMNS = arrayOf(KEY_ID, KEY_NAME)
 
         private val TAG = DbHelper::class.java.simpleName
 
-        private val DATABASE_NAME = "simpledatabase.sqlite"
-        private val DATABASE_VERSION = 1
+        private const val DATABASE_NAME = "simpledatabase.sqlite"
+        private const val DATABASE_VERSION = 1
 
-        private val DATABASE_CREATE =
+        private const val DATABASE_CREATE =
                 "CREATE TABLE $DATABASE_TABLE ($KEY_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "$KEY_NAME TEXT NOT NULL);"
     }
